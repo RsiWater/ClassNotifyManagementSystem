@@ -97,6 +97,7 @@ def send_HW_total(request):
     smtp = prepare(account, password)
     hw_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
+    print('good')
 
 def homework(request):
     db = ExeDB()
