@@ -37,6 +37,10 @@ def sendRollcall(request):
     smtp = prepare(account, password)
     # roll_call(sendList, account, smtp)
     shutdown(smtp)
+    message = dict()
+    message['notify'] = True
+
+    return render(request, 'home/main.html', {'message': message})
 
 def sendHW(request):
     db = ExeDB()
@@ -76,6 +80,18 @@ def send_RC_total(request):
     smtp = prepare(account, password)
     #roll_call_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
+
+
+def homework(request):
+    db = ExeDB()
+    student = db.get()
+    returnList = list()
+    i = 0
+    for ele in student:
+        temp = {'name': ele[0], 'number': i}
+        returnList.append(temp)
+        i+=1
+    return render(request, 'home/homework.html', {'student': returnList})
 
 
 

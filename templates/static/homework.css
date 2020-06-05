@@ -1,0 +1,21 @@
+.container{
+    border-width: 10px;
+    border-color: black;
+    width: 60vw;
+}
+.input_number
+{
+    width: 20%;
+    margin-left: 20px;
+}
+.box
+{
+    display: inline-flex;
+    line-height: 40px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 120px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: red;
+}
