@@ -81,6 +81,22 @@ def send_RC_total(request):
     #roll_call_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
 
+def send_HW_total(request):
+    db=ExeDB()
+    student=db.get()
+
+    scoreList = list()
+    nameList=list()
+    if request.POST:
+        for i in range(len(student)):
+            scoreList.append(student[i][2])
+            nameList.append(student[i][0])
+
+    account = 'eric23244@gmail.com'
+    password = 'jipdqxwqrnrheqsm'
+    smtp = prepare(account, password)
+    hw_total(nameList,scoreList,account,smtp)
+    shutdown(smtp)
 
 def homework(request):
     db = ExeDB()
