@@ -9,14 +9,14 @@ def prepare(account,password):
     smtp.login(account,password)
     return smtp
 
-def hw(schoolnum_l,score_l,account,smtp):
+def hw(schoolnum_l,score_l,account,smtp,sd):
     for i in range(len(schoolnum_l)):
         from_addr=account
         to_addr=schoolnum_l[i]+'@mail.nuk.edu.tw'
 
         s='作業分數: '+score_l[i]+'分'
         mime=MIMEText(s, "plain", "utf-8")
-        mime["Subject"]='作業'
+        mime["Subject"]=sd+'作業'
 
         msg=mime.as_string()
         status=smtp.sendmail(from_addr, to_addr, msg)
