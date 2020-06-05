@@ -53,7 +53,7 @@ class ExeDB:
 
 if __name__=='__main__':
     db = ExeDB()
-    #print(db.get())
+    print(db.get())
     #db.addRC('A1065502')
     #db.addH('A1065506',4)
     #db.modH('A1065506',1)
