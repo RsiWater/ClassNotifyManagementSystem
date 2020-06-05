@@ -39,7 +39,7 @@ def sendRollcall(request):
     shutdown(smtp)
     message = dict()
     message['notify'] = True
-
+    
     return render(request, 'home/main.html', {'message': message})
 
 def sendHW(request):
@@ -54,14 +54,14 @@ def sendHW(request):
                 print(request.POST[str(i)], student[i][0])
                 scoreList.append(request.POST[str(i)])
                 nameList.append(student[i][0])
-                db.addH(student[i][0],request.POST[str(i)])
-            except:
+                db.addH(student[i][0],int(request.POST[str(i)]))
+            except Exception as e:
                 print('off')
     
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
-    #hw(nameList,scoreList,account,smtp)
+    # hw(nameList,scoreList,account,smtp)
     shutdown(smtp)
 
 def send_RC_total(request):
@@ -92,11 +92,6 @@ def homework(request):
         returnList.append(temp)
         i+=1
     return render(request, 'home/homework.html', {'student': returnList})
-
-
-
-    
-
 
 
 def test(request):

@@ -8,5 +8,6 @@ urlpatterns = [
     path('rollcall', views.rollcall),
     path('rollcall/test', views.test),
     path('rollcall/send', views.sendRollcall),
-    path('homework', views.homework)
+    path('homework', views.homework),
+    path('homework/send', views.sendHW)
 ]
