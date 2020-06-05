@@ -36,6 +36,10 @@ def sendRollcall(request):
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
     # roll_call(sendList, account, smtp)
+
+
+
+    
     shutdown(smtp)
 
 def test(request):
