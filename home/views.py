@@ -36,11 +36,52 @@ def sendRollcall(request):
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
     # roll_call(sendList, account, smtp)
+    shutdown(smtp)
+
+def sendHW(request):
+    db = ExeDB()
+    student = db.get()
+
+    scoreList = list()
+    nameList=list()
+    if request.POST:
+        for i in range(len(student)):
+            try:
+                print(request.POST[str(i)], student[i][0])
+                scoreList.append(request.POST[str(i)])
+                nameList.append(student[i][0])
+                db.addH(student[i][0],request.POST[str(i)])
+            except:
+                print('off')
+    
+    account = 'eric23244@gmail.com'
+    password = 'jipdqxwqrnrheqsm'
+    smtp = prepare(account, password)
+    #hw(nameList,scoreList,account,smtp)
+    shutdown(smtp)
+
+def send_RC_total(request):
+    db=ExeDB()
+    student=db.get()
+
+    scoreList = list()
+    nameList=list()
+    if request.POST:
+        for i in range(len(student)):
+            scoreList.append(student[i][1])
+            nameList.append(student[i][0])
+
+    account = 'eric23244@gmail.com'
+    password = 'jipdqxwqrnrheqsm'
+    smtp = prepare(account, password)
+    #roll_call_total(nameList,scoreList,account,smtp)
+    shutdown(smtp)
 
 
 
     
-    shutdown(smtp)
+
+
 
 def test(request):
     messages.info(request, "Test")
