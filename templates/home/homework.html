@@ -8,20 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./homework" method="POST">
+    <form action="./homework/send" method="POST">
         <div class = "container">
             {% csrf_token %}
             {% for ele in student %}
             <div class = "box">
-                <input type="checkbox" name="{{ele.number}}"> {{ele.name}}
+                {{ele.name}} <input type="number" min = "0" max = "2" class = "input_number" name = "{{ele.number}}">
             </div>
             {% endfor %}
             <br><br>
             <input type="submit" value="確定">
         </div>
     </form>
-    {% if message.notify %}
     <script></script>
-    {% endif %}
 </body>
 </html>

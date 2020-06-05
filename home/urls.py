@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.home),
     path('rollcall', views.rollcall),
     path('rollcall/test', views.test),
-    path('rollcall/send', views.sendRollcall)
+    path('rollcall/send', views.sendRollcall),
+    path('homework', views.homework)
 ]

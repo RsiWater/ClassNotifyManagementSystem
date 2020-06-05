@@ -10,5 +10,10 @@
 <body>
     <a class = "rollcall" href="./rollcall">點名</a>
     <a class = "homework" href="./homework">成績</a>
+    {% if message.notify %}
+    <script>
+        alert("點名成功!")
+    </script>
+    {% endif %}
 </body>
 </html>
