@@ -46,9 +46,13 @@ def roll_call(schoolnum_l,account,smtp):
         from_addr=account
         to_addr=schoolnum_l[i]+'@mail.nuk.edu.tw'
 
-        s='點名成功'
-        mime=MIMEText(s, "plain", "utf-8")
-        mime["Subject"]='點名'
+        image_name='gbBvokN.jpg'
+        with open(image_name, "rb") as file:
+            filecontent=file.read()
+        mime=MIMEImage(filecontent)
+        mime["Content-Type"]="application/octet-stream"  
+        mime["Content-Disposition"]='attachment; filename='+image_name
+        mime["Subject"]='點名成功'
 
         msg=mime.as_string()
         status=smtp.sendmail(from_addr, to_addr, msg)
