@@ -58,10 +58,18 @@ def sendHW(request):
             except Exception as e:
                 print('off')
     
+    testList = list()
+    testList2 = list()
+    for i in range(len(nameList)):
+        if nameList[i] == 'A1065503':
+            testList.append(nameList[i])
+            testList2.append(scoreList[i])
+
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
-    # hw(nameList,scoreList,account,smtp)
+    # hw(nameList,scoreList,account,smtp, "Operting System")
+    hw(testList, testList2, account, smtp, "Operating System")
     shutdown(smtp)
 
 def send_RC_total(request):
@@ -95,7 +103,7 @@ def send_HW_total(request):
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
-    hw_total(nameList,scoreList,account,smtp)
+    # hw_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
 
 def homework(request):
