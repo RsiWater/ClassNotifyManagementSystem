@@ -46,7 +46,7 @@ def roll_call(schoolnum_l,account,smtp):
         from_addr=account
         to_addr=schoolnum_l[i]+'@mail.nuk.edu.tw'
 
-        image_name='gbBvokN.jpg'
+        image_name='good.jpg'
         with open(image_name, "rb") as file:
             filecontent=file.read()
         mime=MIMEImage(filecontent)

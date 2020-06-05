@@ -1,3 +1,16 @@
-body{
-    color:red
+.container{
+    border-width: 10px;
+    border-color: black;
+    width: 60vw;
+}
+.box
+{
+    display: inline-flex;
+    line-height: 40px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: red;
 }
