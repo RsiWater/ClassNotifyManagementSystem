@@ -1,0 +1,23 @@
+.rollcall{
+    border-radius: 20px;
+    justify-content: center;
+    line-height: 400px;
+    display: inline-flex;
+    width: 400px;
+    height: 400px;
+    background-color: royalblue;
+    color: white;
+    font-size: 60px;
+}
+.homework{
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    line-height: 400px;
+    display: inline-flex;
+    width: 400px;
+    height: 400px;
+    background-color: rosybrown;
+    color: black;
+    font-size: 60px;
+}
