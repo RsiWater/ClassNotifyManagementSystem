@@ -8,50 +8,50 @@ body
 .rollcall{
     border-radius: 20px;
     justify-content: center;
-    line-height: 400px;
+    line-height: 350px;
     display: inline-flex;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: rgb(129, 152, 253);
     color: black;
-    font-size: 60px;
+    font-size: 50px;
 }
 .homework{
     border-radius: 20px;
     justify-content: center;
     text-align: center;
-    line-height: 400px;
+    line-height: 350px;
     display: inline-flex;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: rgb(127, 247, 247);
     color: black;
-    font-size: 60px;
+    font-size: 50px;
 }
 .grade{
     border-radius: 20px;
     justify-content: center;
     text-align: center;
-    line-height: 400px;
+    line-height: 350px;
     display: inline-flex;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: rgb(142, 255, 132);
     color: black;
-    font-size: 60px;
+    font-size: 50px;
 }
 .studentManage
 {
     border-radius: 20px;
     justify-content: center;
     text-align: center;
-    line-height: 400px;
+    line-height: 350px;
     display: inline-flex;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: rgb(238, 255, 81);
     color: black;
-    font-size: 60px;
+    font-size: 50px;
 }
 a{
     text-decoration: none;

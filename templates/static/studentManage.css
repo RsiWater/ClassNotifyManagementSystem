@@ -1,0 +1,97 @@
+body
+{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+.container{
+    border-width: 10px;
+    border-color: black;
+    width: 60vw;
+}
+.boxContainer
+{
+    display: block;
+    text-align: left;
+}
+.inputBar
+{
+    font-family: cursive;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.inputBar input
+{
+    font-family: cursive;
+    font-size: 20px;
+}
+.titleBox
+{
+    background-color: rgb(255, 219, 244) !important;
+    border-color: rgb(235, 82, 255)!important;
+}
+.box
+{
+    font-family: cursive;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 30%;
+    background-color: rgb(220, 247, 255);
+    border-style: inset;
+    border-width: 10px;
+    border-color: rgb(87, 160, 255);
+}
+.element
+{
+    text-align: center;
+    width:30%
+}
+.title
+{
+    font-size: 32px;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+.buttonContainer
+{
+    text-align: end;
+}
+.submitButton
+{
+    font-size: 20px;
+    font-family: cursive;
+    margin-top: 40px;    
+    justify-items: right;
+    width: 180px;
+    height: 60px;
+    background-color: rgb(189, 189, 255);
+    border-style: inset;
+    border-width: 10px;
+    border-color: rgb(102, 102, 255);
+    text-decoration: none;
+    color: black;
+}
+
+
+.returnButton
+{
+    margin-top: auto;
+    font-size: 20px;
+    font-family: cursive;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 160px;
+    height: 40px;
+    background-color: rgb(231, 189, 255);
+    border-style: inset;
+    border-width: 10px;
+    border-color: rgb(181, 70, 255);
+    text-decoration: none;
+    color: black;
+}
+

@@ -42,10 +42,10 @@ class ExeDB:
 
     def insert(self,ID,rc_grade,h_grade): #rc_grade點名成績 h_grade作業成績
         try:
-            self.__conn.execute('INSERT INTO Student_Grade (ID,rc_grade,h_grade) VALUES (?,?,?)',(ID,rc_grade,h_grade))
+            self.__conn.execute('INSERT INTO Student_Grade (ID,rc_grade,h_grade) VALUES ("{}",{},{})'.format(ID,rc_grade,h_grade))
             self.__conn.commit()
-        except:
-            print('something wrong')
+        except Exception as e:
+            print('something wrong', e)
     
     def delete(self,ID):
         self.__conn.execute('DELETE FROM Student_Grade WHERE ID="{}"'.format(ID))

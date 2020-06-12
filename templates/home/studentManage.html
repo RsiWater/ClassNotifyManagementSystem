@@ -3,42 +3,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'gradeView.css' %}">
+    <link rel="stylesheet" href="{% static 'studentManage.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <form action="./" method="POST">
         <div class = "container">
-            <div class = "title">學生總成績</div>
+            <div class = "title">修課學生列表</div>
+            <div class = inputBar>新增學生： <input type="text" class="insertBar" name="stuName"><input type="submit" value="新增" name="insert"></div>
             <div class = 'boxContainer'>
                 <div class="box titleBox">
                     <div class = "element">學號</div>
-                    <div class = "element">點名</div>
-                    <div class = "element">作業</div>
                 </div>
                 <div class="box titleBox">
                     <div class = "element">學號</div>
-                    <div class = "element">點名</div>
-                    <div class = "element">作業</div>
+                </div>
+                <div class="box titleBox">
+                    <div class = "element">學號</div>
                 </div>
                 {% csrf_token %}
                 {% for ele in student %}
                 <div class = "box">
-                    <div class = "element">{{ele.name}}</div>
-                    <div class = "element">{{ele.rc}}</div>
-                    <div class = "element">{{ele.hw}}</div>
+                    <div class = "element">{{ele.name}}</div> <input type="submit" value="刪除"  name = "{{ele.number}}">
                 </div>
                 {% endfor %}
                 <br><br>
                 <div class="buttonContainer">
-                    <input type="submit" value="送出點名總成績" class = "submitButton" name='rcButton'>
-                    <input type="submit" value="送出作業總成績" class = "submitButton" name='hwButton'>
                     <a href="./../home" class="returnButton">返回</a>
                 </div>
             </div>
         </div>
-        <input type="text" value='grade' style="display: none;" name="postType">
+        <input type="text" value='stuManage' style="display: none;" name="postType">
     </form>
     <script></script>
 </body>
