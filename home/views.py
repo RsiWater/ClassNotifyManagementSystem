@@ -73,8 +73,8 @@ def sendHW(request):
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
-    # hw(nameList,scoreList,account,smtp, "Operting System")
-    hw(testList, testList2, account, smtp, "Operating System")
+    # hw(nameList,scoreList,account,smtp, request.POST['subject'])
+    hw(testList, testList2, account, smtp, request.POST['subject'])
     shutdown(smtp)
 
 def send_RC_total(request):
@@ -111,7 +111,7 @@ def send_HW_total(request):
     # hw_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
 
-def getAll(request):
+def gradeView(request):
     db = ExeDB()
     student = db.get()
     returnList = list()
@@ -122,7 +122,7 @@ def getAll(request):
         returnList.append(temp)
         i+=1
 
-    return render(request, '', {'student': returnList})
+    return render(request, 'home/gradeView.html', {'student': returnList})
 
 
 def homework(request):

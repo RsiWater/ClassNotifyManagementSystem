@@ -28,16 +28,6 @@
     text-align: center;
     margin-bottom: 5vh;
 }
-.subject
-{
-    font-size: 20px;
-    font-family: cursive;
-    margin-bottom: 30px;
-}
-.subject input
-{
-    height: 20px;
-}
 .buttonContainer
 {
     text-align: right;

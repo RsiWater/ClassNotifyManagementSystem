@@ -3,15 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'homework.css' %}">
+    <link rel="stylesheet" href="{% static 'gradeView.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form action="./homework/send" method="POST">
+    <form action="./gradeView/send" method="POST">
         <div class = "container">
-            <div class = "title">作業登記</div>
-            <div class = "subject">作業名稱：<input type="text" name="subject"></div>
+            <div class = "title">作業成績</div>
             {% csrf_token %}
             {% for ele in student %}
             <div class = "box">
