@@ -106,6 +106,20 @@ def send_HW_total(request):
     # hw_total(nameList,scoreList,account,smtp)
     shutdown(smtp)
 
+def getAll(request):
+    db = ExeDB()
+    student = db.get()
+    returnList = list()
+    i=0
+
+    for ele in student:
+        temp = {'name': ele[0], 'rc': ele[1], 'hw': ele[2], 'number': i}
+        returnList.append(temp)
+        i+=1
+
+    return render(request, '', {'student': returnList})
+
+
 def homework(request):
     db = ExeDB()
     student = db.get()
