@@ -41,7 +41,6 @@ def home(request):
                 message['notify'] = 'delete'
             except Exception as e:
                 print(e)
-            
 
         return render(request, 'home/main.html', {'message': message})
     else:
