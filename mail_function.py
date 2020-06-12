@@ -72,6 +72,7 @@ def roll_call_total(schoolnum_l,score_l,account,smtp):
 
         msg=mime.as_string()
         status=smtp.sendmail(from_addr, to_addr, msg)
+
         if status=={}:
             print("郵件傳送成功!")
         else:

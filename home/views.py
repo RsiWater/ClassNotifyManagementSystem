@@ -4,12 +4,27 @@ from ExeDB import *
 from mail_function import *
 
 # Create your views here.
-def home(request, message = None):
-    if message == None:
-        return render(request, 'home/main.html')
-    else:    
+def home(request):
+    if request.POST:
+        message = dict()
+        if request.POST['postType'] == 'rc':
+            sendRollcall(request)
+            message['notify'] = 'rc'
+        elif request.POST['postType'] == 'hw':
+            sendHW(request)
+            message['notify'] = 'hw'
+        elif request.POST['postType'] == 'grade':
+            try :
+                print(request.POST['rcButton'])    
+                send_RC_total(request)
+                message['notify'] = 'grade_rc'
+            except:
+                send_HW_total(request)
+                message['notify'] = 'grade_hw'
+            
         return render(request, 'home/main.html', {'message': message})
-
+    else:
+        return render(request, 'home/main.html')
 
 def rollcall(request):
     db = ExeDB()
@@ -39,13 +54,8 @@ def sendRollcall(request):
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
-    # roll_call(sendList, account, smtp)
+    roll_call(sendList, account, smtp)
     shutdown(smtp)
-    message = dict()
-    message['notify'] = True
-    
-    # return render(request, "home/main.html", {'message': message})
-    return redirect(home, message = message)
 
 def sendHW(request):
     db = ExeDB()
@@ -63,18 +73,13 @@ def sendHW(request):
             except Exception as e:
                 print('off')
     
-    testList = list()
-    testList2 = list()
-    for i in range(len(nameList)):
-        if nameList[i] == 'A1065503':
-            testList.append(nameList[i])
-            testList2.append(scoreList[i])
+    # testList, testList2 = getTestList(nameList, scoreList)
 
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
     # hw(nameList,scoreList,account,smtp, request.POST['subject'])
-    hw(testList, testList2, account, smtp, request.POST['subject'])
+    # hw(testList, testList2, account, smtp, request.POST['subject'])
     shutdown(smtp)
 
 def send_RC_total(request):
@@ -85,13 +90,17 @@ def send_RC_total(request):
     nameList=list()
     if request.POST:
         for i in range(len(student)):
-            scoreList.append(student[i][1])
+            scoreList.append(str(student[i][1]))
             nameList.append(student[i][0])
 
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
+
+    testList , testList2 = getTestList(nameList, scoreList)
+    print(testList, testList2)
     smtp = prepare(account, password)
-    #roll_call_total(nameList,scoreList,account,smtp)
+    # roll_call_total(nameList,scoreList,account,smtp)
+    # roll_call_total(testList, testList2, account, smtp)
     shutdown(smtp)
 
 def send_HW_total(request):
@@ -102,14 +111,28 @@ def send_HW_total(request):
     nameList=list()
     if request.POST:
         for i in range(len(student)):
-            scoreList.append(student[i][2])
+            scoreList.append(str(student[i][2]))
             nameList.append(student[i][0])
 
+
+    testList , testList2 = getTestList(nameList, scoreList)
     account = 'eric23244@gmail.com'
     password = 'jipdqxwqrnrheqsm'
     smtp = prepare(account, password)
     # hw_total(nameList,scoreList,account,smtp)
+    # hw_total(testList, testList2, account, smtp)
+    
     shutdown(smtp)
+
+def getTestList(nameList, scoreList):
+    testList = list()
+    testList2 = list()
+    for i in range(len(nameList)):
+        if nameList[i] == 'A1065502':
+            testList.append(nameList[i])
+            testList2.append(scoreList[i])
+    
+    return (testList, testList2)
 
 def gradeView(request):
     db = ExeDB()

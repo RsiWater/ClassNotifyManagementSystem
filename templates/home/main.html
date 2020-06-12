@@ -11,9 +11,22 @@
     <a class = "rollcall" href="./rollcall">點名</a>
     <a class = "homework" href="./homework">作業</a>
     <a class = "grade" href="./gradeView">成績總覽</a>
-    {% if message.notify %}
+    <!-- <a class = "studentManage" href="./studentManage">修課學生管理</a> -->
+    {% if message.notify == 'rc'%}
     <script>
         alert("點名成功!")
+    </script>
+    {% elif message.notify == 'hw' %}
+    <script>
+        alert("作業成績寄送成功!")
+    </script>
+    {% elif message.notify == 'grade_rc' %}
+    <script>
+        alert("作業總成績寄送成功!")
+    </script>
+    {% elif message.notify == 'grade_hw' %}
+    <script>
+        alert("點名總成績寄送成功!")
     </script>
     {% endif %}
 </body>

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./rollcall/send" method="POST">
+    <form action="./" method="POST">
         <div class = "container">
             <div class = "title">課程點名</div>
             {% csrf_token %}
@@ -22,6 +22,7 @@
                 <input type="submit" value="確定" class = "submitButton">
                 <a href="./../home" class="returnButton">返回</a>
             </div>
+            <input type="text" value='rc' style="display: none;" name="postType">
         </div>
     </form>
 </body>

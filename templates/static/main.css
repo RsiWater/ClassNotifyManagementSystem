@@ -1,3 +1,10 @@
+body
+{
+    padding-top: 20vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
 .rollcall{
     border-radius: 20px;
     justify-content: center;
@@ -30,6 +37,19 @@
     width: 400px;
     height: 400px;
     background-color: rgb(142, 255, 132);
+    color: black;
+    font-size: 60px;
+}
+.studentManage
+{
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    line-height: 400px;
+    display: inline-flex;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(238, 255, 81);
     color: black;
     font-size: 60px;
 }
