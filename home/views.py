@@ -1,11 +1,15 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from ExeDB import *
 from mail_function import *
 
 # Create your views here.
-def home(request):
-    return render(request, 'home/main.html')
+def home(request, message = None):
+    if message == None:
+        return render(request, 'home/main.html')
+    else:    
+        return render(request, 'home/main.html', {'message': message})
+
 
 def rollcall(request):
     db = ExeDB()
@@ -40,7 +44,8 @@ def sendRollcall(request):
     message = dict()
     message['notify'] = True
     
-    return render(request, 'home/main.html', {'message': message})
+    # return render(request, "home/main.html", {'message': message})
+    return redirect(home, message = message)
 
 def sendHW(request):
     db = ExeDB()

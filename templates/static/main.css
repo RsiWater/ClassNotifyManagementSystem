@@ -5,8 +5,8 @@
     display: inline-flex;
     width: 400px;
     height: 400px;
-    background-color: royalblue;
-    color: white;
+    background-color: rgb(129, 152, 253);
+    color: black;
     font-size: 60px;
 }
 .homework{
@@ -17,7 +17,23 @@
     display: inline-flex;
     width: 400px;
     height: 400px;
-    background-color: rosybrown;
+    background-color: rgb(127, 247, 247);
     color: black;
     font-size: 60px;
+}
+.grade{
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    line-height: 400px;
+    display: inline-flex;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(142, 255, 132);
+    color: black;
+    font-size: 60px;
+}
+a{
+    text-decoration: none;
+    font-family: cursive;
 }

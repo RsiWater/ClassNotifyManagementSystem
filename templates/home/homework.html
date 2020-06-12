@@ -10,6 +10,9 @@
 <body>
     <form action="./homework/send" method="POST">
         <div class = "container">
+            <div class = "title">
+                作業登記
+            </div>
             {% csrf_token %}
             {% for ele in student %}
             <div class = "box">
@@ -17,7 +20,10 @@
             </div>
             {% endfor %}
             <br><br>
-            <input type="submit" value="確定">
+            <div class="buttonContainer">
+                <input type="submit" value="確定" class = "submitButton">
+                <a href="./../home" class="returnButton">返回</a>
+            </div>
         </div>
     </form>
     <script></script>

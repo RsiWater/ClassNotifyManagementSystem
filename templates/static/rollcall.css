@@ -5,12 +5,58 @@
 }
 .box
 {
+    font-family: cursive;
     display: inline-flex;
     line-height: 40px;
     margin-bottom: 10px;
     height: 40px;
     width: 100px;
+    background-color: rgb(255, 189, 189);
     border-style: inset;
     border-width: 10px;
     border-color: red;
+}
+.title
+{
+    font-size: 32px;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+.buttonContainer
+{
+    text-align: right;
+    padding-right: 59px;
+}
+.submitButton
+{
+    font-size: 16px;
+    font-family: cursive;
+    margin-top: 40px;    
+    justify-items: right;
+    width: 120px;
+    height: 60px;
+    background-color: rgb(189, 189, 255);
+    border-style: inset;
+    border-width: 10px;
+    border-color: blue;
+    text-decoration: none;
+    color: black;
+}
+.returnButton
+{
+    margin-top: auto;
+    font-size: 16px;
+    font-family: cursive;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(231, 189, 255);
+    border-style: inset;
+    border-width: 10px;
+    border-color: rgb(153, 0, 255);
+    text-decoration: none;
+    color: black;
 }
