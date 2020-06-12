@@ -15,7 +15,7 @@
             {% csrf_token %}
             {% for ele in student %}
             <div class = "box">
-                {{ele.name}} <input type="number" min = "0" max = "2" class = "input_number" name = "{{ele.number}}">
+                {{ele.name}} <input type="number" min = "0" max = "2" class = "input_number" name = "{{ele.number}}" value='0'>
             </div>
             {% endfor %}
             <br><br>
